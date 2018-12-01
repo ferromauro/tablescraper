@@ -11,12 +11,13 @@ from selenium import webdriver
 import csv
 
 def main():    
-    url='file:///home/m/Progetti/PY/ScrapeTable/scrapetable.html'
+    url='' #PUT HERE THE URL TO SCRAPE
+    target='target_table' # PUT HERE THE ID OF THE TABLE TO SCRAPE
     array_table=[]
     i=1
     driver = webdriver.Firefox()
     driver.get(url)
-    table = driver.find_elements_by_xpath(f'//table[@id="target_table"]/tbody/tr')
+    table = driver.find_elements_by_xpath(f'//table[@id="{target}"]/tbody/tr')
     for row in table:
         array_row=[]
         if table.index(row)== 0:
